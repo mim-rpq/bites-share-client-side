@@ -1,0 +1,89 @@
+
+import React from "react";
+import { useLocation } from "react-router";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+} from "react-icons/fa";
+
+const Footer = () => {
+  const location = useLocation();
+  const hiddenRoutes = ["/auth/login", "/auth/register"];
+
+  if (hiddenRoutes.includes(location.pathname)) {
+    return null; // Hide footer on login/register pages
+  }
+
+  return (
+    <footer className="bg-gray-900 text-white px-6 py-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Logo & Description */}
+        <div>
+          <h2 className="text-2xl font-bold mb-2">BiteShare</h2>
+          <p className="text-sm text-gray-400">
+            Share food, reduce waste, and connect with your community. One bite at a time.
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+          <ul className="space-y-2 text-sm text-gray-400">
+            <li><a href="/" className="hover:text-white">Home</a></li>
+            <li><a href="/availableFoods" className="hover:text-white">Available Foods</a></li>
+            <li><a href="/myFoodRequest" className="hover:text-white">My Food Requests</a></li>
+            <li><a href="/addFood" className="hover:text-white">Add Food</a></li>
+          </ul>
+        </div>
+
+        {/* Explore */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Explore</h3>
+          <ul className="space-y-2 text-sm text-gray-400">
+            <li><a href="/manageMyFoods" className="hover:text-white">Manage My Foods</a></li>
+            <li><a href="/faq" className="hover:text-white">FAQ</a></li>
+            <li><a href="/volunteer" className="hover:text-white">Volunteer</a></li>
+            <li><a href="/contact" className="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        {/* Newsletter / Social */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Stay Connected</h3>
+          <form className="flex flex-col gap-3">
+            <input
+              type="email"
+              placeholder="Your email"
+              className="px-3 py-2 rounded bg-gray-800 text-white text-sm placeholder-gray-400 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-2 rounded"
+            >
+              Subscribe
+            </button>
+          </form>
+          <div className="flex gap-4 mt-4">
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaFacebookF />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaTwitter />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Line */}
+      <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} BiteShare. All rights reserved.
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
