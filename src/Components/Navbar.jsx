@@ -3,12 +3,13 @@ import { Link, Navigate, NavLink } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 import defaultUser from '../assets/images/defaultUser.png'
 import { toast } from 'react-toastify';
+import logo from '../assets/images/logo2.png'
 
 const Navbar = () => {
 
-    const {user, userLoading, logOut} = use(AuthContext)
+    const { user, userLoading, logOut } = use(AuthContext)
 
-     const handleLogOut = () => {
+    const handleLogOut = () => {
         logOut().then(() => {
             toast.error('You logged out successfully')
             Navigate('/')
@@ -76,8 +77,9 @@ const Navbar = () => {
         <div className="navbar bg-base-100 shadow-sm h-[80px]">
             <div className="navbar-start">
 
+                <img src={logo} alt="" />
+                <h1 className='text-primary ml-3 font-bold text-4xl'>Bites<span className='text-5xl text-secondary'>Share</span></h1>
 
-                <h1 className='text-primary font-bold text-4xl'>BitesShare</h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className=" flex items-center gap-5 px-1">
@@ -92,7 +94,7 @@ const Navbar = () => {
 
                     <div className='flex gap-2'>
                         <a data-tooltip-id="my-tooltip"><img
-                             src={user?.photoURL || defaultUser}
+                            src={user?.photoURL || defaultUser}
                             alt="Profile"
                             className="md:w-11 w-9 h-9 md:h-11 rounded-full border-2 border-primary"
                         /></a>
