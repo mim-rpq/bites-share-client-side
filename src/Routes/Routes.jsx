@@ -9,6 +9,7 @@ import NotFound from "../Pages/NotFound";
 import AuthLayouts from "../Layouts/AuthLayouts";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 
 
@@ -24,7 +25,9 @@ const router = createBrowserRouter([
 
             {
                 path:'/myFoodRequest',
-                element:<MyFoodRequest></MyFoodRequest>
+                element:<PrivateRoute>
+                    <MyFoodRequest></MyFoodRequest>
+                </PrivateRoute>
             },
             {
                 path:'/availableFoods',
@@ -32,12 +35,16 @@ const router = createBrowserRouter([
             },
             {
                 path:'/manageMyFoods',
-                element:<ManageMyFoods></ManageMyFoods>
+                element:<PrivateRoute>
+                    <ManageMyFoods></ManageMyFoods>
+                </PrivateRoute>
             },
 
             {
                 path:'/addFood',
-                element:<AddFood></AddFood>
+                element:<PrivateRoute>
+                    <AddFood></AddFood>
+                </PrivateRoute>
             }
         ]
     },

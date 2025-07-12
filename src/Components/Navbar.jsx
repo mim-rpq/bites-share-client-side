@@ -1,13 +1,28 @@
-import React from 'react';
-import { NavLink } from 'react-router';
+import React, { use } from 'react';
+import { Link, Navigate, NavLink } from 'react-router';
+import { AuthContext } from '../Provider/AuthContext';
+import defaultUser from '../assets/images/defaultUser.png'
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
+
+    const {user, userLoading, logOut} = use(AuthContext)
+
+     const handleLogOut = () => {
+        logOut().then(() => {
+            toast.error('You logged out successfully')
+            Navigate('/')
+
+        }).catch((error) => {
+            toast.error(error)
+        })
+    }
 
     const links = <>
         <li className='mr-4'>
             <NavLink
                 className={({ isActive }) =>
-                    `${isActive ? "text-primary border-b-2 pb-2" : " hover:border-b-2 border-base-200 pb-2"}`
+                    `${isActive ? "text-secondary border-b-2 pb-2" : " text-primary hover:border-b-2 border-base-200 pb-2"}`
                 }
                 to='/'
             >
@@ -17,7 +32,7 @@ const Navbar = () => {
         <li className='mr-4'>
             <NavLink
                 className={({ isActive }) =>
-                    `${isActive ? "text-primary border-b-2 pb-2" : " hover:border-b-2 border-base-200 pb-2"}`
+                    `${isActive ? "text-secondary border-b-2 pb-2" : "text-primary hover:border-b-2 border-base-200 pb-2"}`
                 }
                 to='/myFoodRequest'
             >
@@ -27,7 +42,7 @@ const Navbar = () => {
         <li className='mr-4'>
             <NavLink
                 className={({ isActive }) =>
-                    `${isActive ? "text-primary border-b-2 pb-2" : " hover:border-b-2 border-base-200 pb-2"}`
+                    `${isActive ? "text-secondary border-b-2 pb-2" : "text-primary hover:border-b-2 border-base-200 pb-2"}`
                 }
                 to='/availableFoods'
             >
@@ -37,7 +52,7 @@ const Navbar = () => {
         <li className='mr-4'>
             <NavLink
                 className={({ isActive }) =>
-                    `${isActive ? "text-primary border-b-2 pb-2" : " hover:border-b-2 border-base-200 pb-2"}`
+                    `${isActive ? "text-secondary border-b-2 pb-2" : "text-primary hover:border-b-2 border-base-200 pb-2"}`
                 }
                 to='/manageMyFoods'
             >
@@ -47,7 +62,7 @@ const Navbar = () => {
         <li className='mr-4'>
             <NavLink
                 className={({ isActive }) =>
-                    `${isActive ? "text-primary border-b-2 pb-2" : " hover:border-b-2 border-base-200 pb-2"}`
+                    `${isActive ? "text-secondary border-b-2 pb-2" : "text-primary hover:border-b-2 border-base-200 pb-2"}`
                 }
                 to='/addFood'
             >
@@ -61,18 +76,35 @@ const Navbar = () => {
         <div className="navbar bg-base-100 shadow-sm h-[80px]">
             <div className="navbar-start">
 
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+
+                <h1 className='text-primary font-bold text-4xl'>BitesShare</h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className=" flex items-center gap-5 px-1">
 
 
-                {links}
+                    {links}
 
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                {userLoading ? null : user ? (
+
+                    <div className='flex gap-2'>
+                        <a data-tooltip-id="my-tooltip"><img
+                             src={user?.photoURL || defaultUser}
+                            alt="Profile"
+                            className="md:w-11 w-9 h-9 md:h-11 rounded-full border-2 border-primary"
+                        /></a>
+                        <Link onClick={handleLogOut} className=" btn px-2 py-2 rounded-sm lg:font-medium md:rounded-md transition hover:scale-110 duration-300 bg-primary lg:mr-4 text-white lg:px-6 hover:bg-secondary">Logout</Link>
+                    </div>
+
+                ) : (
+
+                    <>
+                        <Link to='/auth/register' className="btn  bg-primary mr-4 text-white md:px-6 pt-2 hidden md:block hover:bg-secondary">Register</Link>
+                        <Link to='/auth/login' className="btn bg-primary mr-4 text-white lg:px-6 hover:bg-secondary">Login</Link>
+                    </>)}
 
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -81,7 +113,7 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            {links}
+                        {links}
                     </ul>
                 </div>
             </div>
