@@ -1,6 +1,6 @@
 import React from 'react';
 import bannerImg1 from '../assets/images/banner1.jpg'
-import animationImg1 from '../assets/images/animation.jpg'
+import animationImg1 from '../assets/images/ani2.jpg'
 import animationImg2 from '../assets/images/ani.jpg'
 import { motion } from "motion/react"
 
