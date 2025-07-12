@@ -6,6 +6,7 @@ import Spinner from "../Components/Spinner";
 const AvailableFoods = () => {
   const [searchText, setSearchText] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
+  const [isThreeColumn, setIsThreeColumn] = useState(true);
 
   const { isLoading, data: allFoods = [], refetch } = useQuery({
     queryKey: ['availableFoods', sortOrder],
@@ -33,24 +34,26 @@ const AvailableFoods = () => {
 
   return (
     <div className="px-4 py-11 max-w-11/12 mx-auto">
-      <h1 className='text-4xl text-center text-primary mb-6'>Available Foods</h1>
+      <h1 className='text-4xl text-center font-bold text-primary mb-6'>Available Foods</h1>
 
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
-        <div className="flex gap-2 w-full md:w-auto">
+        <div className="flex  w-full md:w-auto">
           <input
             type="text"
             placeholder="Search food..."
-            className="rounded-md border border-primary py-2 px-3 w-full md:w-64 focus:border-primary focus:outline-2 transition"
+            className="rounded-tl-md rounded-bl-md  border border-primary py-2 px-3 w-full md:w-64 focus:border-primary focus:outline-2 transition"
             value={searchText}
             onChange={handleSearchChange}
           />
           <button
-            className="bg-primary text-white px-4 rounded-md hover:bg-primary transition"
-            
+            className="bg-primary text-white px-4  hover:bg-primary transition"
+
           >
             Search
           </button>
         </div>
+
+     
 
         <div className="flex items-center gap-2">
           <label htmlFor="sort" className="text-lg font-medium">Sort by Expiry:</label>
@@ -66,11 +69,20 @@ const AvailableFoods = () => {
         </div>
       </div>
 
+         <div className="flex justify-end mb-4">
+          <button
+            onClick={() => setIsThreeColumn(prev => !prev)}
+            className="bg-primary cursor-pointer hover:bg-secondary text-white px-4 py-2 rounded-md hover:bg-opacity-80 transition"
+          >
+            Change Layout
+          </button>
+        </div>
+
       {
         filteredFoods.length === 0 ? (
           <p className="text-center min-h-screen flex items-center justify-center text-xl text-gray-500">No foods found matching your search.</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className={`grid grid-cols-1 sm:grid-cols-2 ${isThreeColumn ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-6`}>
             {filteredFoods.map(food => (
               <AvailableFoodCard key={food._id} food={food} />
             ))}

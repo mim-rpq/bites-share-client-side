@@ -20,7 +20,7 @@ const AvailableFoodCard = ({ food }) => {
             <div className='pt-9 '>
                 <div className='space-y-1'>
                     <h2 className="text-xl font-semibold mt-2">{foodName}</h2>
-                    <p>Quantity:{foodQuantity}</p>
+                    <p>Quantity: <span className='text-primary'>{foodQuantity}</span></p>
                     <p className='flex items-center gap-2'> <FaLocationDot color='red' /><span className='font-bold'>Location</span>:{pickupLocation}</p>
                     <p className="text-xs text-gray-400 flex items-center gap-2"> <CiTimer size={15} />Expires: {new Date(expiredDateTime).toLocaleString()}</p>
                 </div>
@@ -34,6 +34,9 @@ const AvailableFoodCard = ({ food }) => {
                         <p className="text-sm text-gray-600 ">{userEmail}</p>
                     </div>
                 </div>
+            </div>
+            <div className='my-5'>
+                <button className='btn btn-primary hover:btn-secondary text-white w-full'>View Details</button>
             </div>
 
         </div>
