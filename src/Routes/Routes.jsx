@@ -10,39 +10,50 @@ import AuthLayouts from "../Layouts/AuthLayouts";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "../Provider/PrivateRoute";
+import FoodDetails from "../Pages/FoodDetails";
+import Spinner from "../Components/Spinner";
 
 
 
 const router = createBrowserRouter([
     {
-        path:'/',
-        Component:RootLayouts,
-        children:[
+        path: '/',
+        Component: RootLayouts,
+        children: [
             {
-                index:true,
-                Component:Home
+                index: true,
+                Component: Home
             },
 
             {
-                path:'/myFoodRequest',
-                element:<PrivateRoute>
+                path: '/myFoodRequest',
+                element: <PrivateRoute>
                     <MyFoodRequest></MyFoodRequest>
                 </PrivateRoute>
             },
             {
-                path:'/availableFoods',
-                Component:AvailableFoods
+                path: '/availableFoods',
+                Component: AvailableFoods
             },
             {
-                path:'/manageMyFoods',
-                element:<PrivateRoute>
+                path: '/manageMyFoods',
+                element: <PrivateRoute>
                     <ManageMyFoods></ManageMyFoods>
                 </PrivateRoute>
             },
 
             {
-                path:'/addFood',
-                element:<PrivateRoute>
+                path: '/foodDetails/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/foods/availableFoods/${params.id}`),
+                hydrateFallbackElement: <Spinner></Spinner>,
+                element: <PrivateRoute>
+                    <FoodDetails></FoodDetails>
+                </PrivateRoute>
+            },
+
+            {
+                path: '/addFood',
+                element: <PrivateRoute>
                     <AddFood></AddFood>
                 </PrivateRoute>
             }
@@ -50,7 +61,7 @@ const router = createBrowserRouter([
     },
 
 
-     {
+    {
         path: '/auth',
         element: <AuthLayouts></AuthLayouts>,
         children: [
@@ -67,11 +78,11 @@ const router = createBrowserRouter([
     },
 
     {
-        path:'*',
-        Component:NotFound
+        path: '*',
+        Component: NotFound
     }
 
-    
+
 ])
 
 export default router

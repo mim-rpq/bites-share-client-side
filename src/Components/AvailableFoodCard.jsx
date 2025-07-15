@@ -2,8 +2,16 @@ import React from 'react';
 import { CiTimer } from 'react-icons/ci';
 import { FaLocationDot } from 'react-icons/fa6';
 
+import { Link } from 'react-router';
+
+
+
 const AvailableFoodCard = ({ food }) => {
+
+   
+
     const {
+        _id,
         foodName,
         foodImage,
         foodQuantity,
@@ -13,6 +21,16 @@ const AvailableFoodCard = ({ food }) => {
         userPhotoURL,
         userEmail
     } = food;
+
+    
+
+    // const handleViewDetails = ()=>{
+    //     if(!user){
+    //         navigate('/auth/login')
+    //     }else{
+    //         navigate(`/foodDetails/${food._id}`)
+    //     }
+    // }
 
     return (
         <div className="border border-primary p-4 bg-white rounded-xl shadow-2xl hover:shadow-md transition-all">
@@ -36,7 +54,9 @@ const AvailableFoodCard = ({ food }) => {
                 </div>
             </div>
             <div className='my-5'>
-                <button className='btn btn-primary hover:btn-secondary text-white w-full'>View Details</button>
+                <Link to={`/foodDetails/${_id}`}>
+                    <button className='btn btn-primary hover:btn-secondary text-white w-full'>View Details</button>
+                </Link>
             </div>
 
         </div>

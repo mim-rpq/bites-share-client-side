@@ -4,10 +4,12 @@ import { useQuery } from '@tanstack/react-query';
 import FeaturedCard from '../Components/FeaturedFoodsCard';
 import Spinner from '../Components/Spinner';
 import featuredFoodTItleLogo from '../assets/images/f-logo.png'
+import FeaturedFoodsCard from '../Components/FeaturedFoodsCard';
+import { Link } from 'react-router';
 
 const Home = () => {
 
-    const { isPending, data: featuredFoods } = useQuery({
+    const { isPending,  data: featuredFoods } = useQuery({
         queryKey: ['featuredFoods'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/foods/featuredFoods');
@@ -20,6 +22,10 @@ const Home = () => {
     if (isPending) {
         return <Spinner></Spinner>
     }
+
+    // if(isLoading){
+    //     <Spinner></Spinner>
+    // }
 
 
     return (
@@ -35,11 +41,13 @@ const Home = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2  gap-9">
                         {featuredFoods?.map(food => (
-                            <FeaturedCard key={food._id} food={food} />
+                            <FeaturedFoodsCard key={food._id} food={food} />
                         ))}
                     </div>
                     <div className='flex justify-center'>
-                        <button className='btn bg-primary text-white border-0 mt-16 my-4 hover:bg-secondary'>Show All Available Food</button>
+                        <Link to='/availableFoods'>
+                            <button className='btn bg-primary text-white border-0 mt-16 my-4 hover:bg-secondary'>Show All Available Food</button>
+                        </Link>
                     </div>
                 </div>
             </div>

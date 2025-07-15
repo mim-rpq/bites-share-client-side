@@ -3,7 +3,7 @@ import React from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import { CiTimer } from "react-icons/ci";
 
-const FeaturedCard = ({ food }) => {
+const FeaturedFoodsCard = ({ food }) => {
     const {
         foodName,
         foodImage,
@@ -41,4 +41,4 @@ const FeaturedCard = ({ food }) => {
     );
 };
 
-export default FeaturedCard;
+export default FeaturedFoodsCard;
