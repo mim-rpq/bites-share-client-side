@@ -7,6 +7,8 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
+import logo from '../assets/images/logo2.png'
+
 const Footer = () => {
   const location = useLocation();
   const hiddenRoutes = ["/auth/login", "/auth/register"];
@@ -20,7 +22,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo & Description */}
         <div>
-          <h2 className="text-2xl font-bold mb-2">BiteShare</h2>
+          <div className="navbar-start">
+
+            <img src={logo} alt="" />
+            <h1 className='text-primary ml-3 font-bold text-4xl'>Bites<span className='text-5xl text-secondary'>Share</span></h1>
+
+          </div>
           <p className="text-sm text-gray-400">
             Share food, reduce waste, and connect with your community. One bite at a time.
           </p>
