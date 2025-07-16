@@ -10,6 +10,7 @@ import group from '../assets/images/banner3.jpg'
 import Count from '../Components/Count';
 import HowItWorks from '../Components/HowWorks';
 
+
 const Home = () => {
 
     const { isPending, data: featuredFoods } = useQuery({
@@ -68,7 +69,7 @@ const Home = () => {
             </div>
 
             <div>
-                
+                <HowItWorks></HowItWorks>
             </div>
 
         </div>
