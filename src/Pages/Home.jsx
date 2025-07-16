@@ -6,10 +6,13 @@ import Spinner from '../Components/Spinner';
 import featuredFoodTItleLogo from '../assets/images/f-logo.png'
 import FeaturedFoodsCard from '../Components/FeaturedFoodsCard';
 import { Link } from 'react-router';
+import group from '../assets/images/banner3.jpg'
+import Count from '../Components/Count';
+import HowItWorks from '../Components/HowWorks';
 
 const Home = () => {
 
-    const { isPending,  data: featuredFoods } = useQuery({
+    const { isPending, data: featuredFoods } = useQuery({
         queryKey: ['featuredFoods'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/foods/featuredFoods');
@@ -50,6 +53,22 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
+            </div>
+            <div className='relative  min-h-[600px] '>
+                <div style={{
+                    backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3), transparent),url(${group})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'bottom',
+                    backgroundRepeat: "no-repeat"
+                }} className='w-full  h-full absolute inset-0 z-0'>
+                    <div className='relative z-10 max-w-7xl mx-auto '>
+                        <Count></Count>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                
             </div>
 
         </div>

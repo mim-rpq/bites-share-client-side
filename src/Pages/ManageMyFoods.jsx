@@ -108,8 +108,8 @@ const ManageMyFoods = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto my-10">
-            <h2 className="text-3xl font-bold mb-6">Manage My Foods</h2>
+        <div className="max-w-6xl bg-gray-50 min-h-screen mx-auto my-10 ">
+            <h2 className="text-3xl font-bold mb-6 p-4 text-center">Manage My Foods</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full border rounded-lg">
                     <thead className="bg-gray-100">
@@ -122,7 +122,7 @@ const ManageMyFoods = () => {
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className=''>
                         {myFoods.length === 0 ? (
                             <tr>
                                 <td colSpan="6" className="text-center py-8 text-gray-500 font-semibold">

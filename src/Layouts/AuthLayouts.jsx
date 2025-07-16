@@ -4,6 +4,7 @@ import { Outlet } from 'react-router';
 
 
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const AuthLayouts = () => {
     return (
@@ -24,7 +25,7 @@ const AuthLayouts = () => {
             </main>
 
             <footer>
-
+                    <Footer></Footer>
             </footer>
         </div>
     );

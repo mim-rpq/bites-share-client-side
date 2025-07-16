@@ -27,8 +27,7 @@ const FoodDetails = () => {
         userPhotoURL,
         userEmail
     } = food;
-
-
+    console.log(user.accessToken);
     const handleRequest = async () => {
         setIsRequesting(true);
         try {
@@ -38,15 +37,28 @@ const FoodDetails = () => {
                     requesterEmail: user.email,
                     requestNotes: notes,
                     status: 'requested',
-                    foodId: foodId,
-                    requestDate: new Date().toISOString(),
+                    foodId: foodId
                 },
                 {
                     headers: {
                         Authorization: `Bearer ${user.accessToken}`
-                    }
+                    },
+
+                    validateStatus: () => true
                 }
             );
+
+            if (response.status === 403) {
+                    document.getElementById('request_modal')?.close();
+                Swal.fire({
+                    position: "center",
+                    icon: 'error',
+                    title: 'Request Limit Exceeded',
+                   
+                    text: response.data.message || 'You have reached your daily limit of 3 requests.'
+                });
+                return;
+            }
 
             if (response.data.insertedId) {
                 Swal.fire({
@@ -54,7 +66,8 @@ const FoodDetails = () => {
                     icon: "success",
                     title: "Food Request sent successfully!",
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 1500,
+                  
                 });
 
                 navigate('/myFoodRequest');

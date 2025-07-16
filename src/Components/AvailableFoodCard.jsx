@@ -24,13 +24,6 @@ const AvailableFoodCard = ({ food }) => {
 
     
 
-    // const handleViewDetails = ()=>{
-    //     if(!user){
-    //         navigate('/auth/login')
-    //     }else{
-    //         navigate(`/foodDetails/${food._id}`)
-    //     }
-    // }
 
     return (
         <div className="border border-primary p-4 bg-white rounded-xl shadow-2xl hover:shadow-md transition-all">
