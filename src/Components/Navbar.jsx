@@ -77,12 +77,23 @@ const Navbar = () => {
     return (
 
         <div className="navbar bg-base-100 shadow-sm h-[80px]">
+            <div className="dropdown">
+                <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                </div>
+                <ul
+                    tabIndex={0}
+                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                    {links}
+                </ul>
+            </div>
             <div className="navbar-start">
 
-                <img src={logo} alt="" />
-                <h1 className='text-primary ml-3 font-bold text-4xl'>Bites<span className='text-5xl text-secondary'>Share</span></h1>
+                <img src={logo} className='hidden md:block' alt="" />
+                <h1 className='text-primary ml-3 font-bold text-2xl lg:text-4xl'>Bites<span className=' text-3xl lg:text-5xl text-secondary'>Share</span></h1>
 
             </div>
+
             <div className="navbar-center hidden lg:flex">
                 <ul className=" flex items-center gap-5 px-1">
 
@@ -110,7 +121,7 @@ const Navbar = () => {
                         <Link to='/auth/login' className="btn bg-primary mr-4 text-white lg:px-6 hover:bg-secondary">Login</Link>
                     </>)}
 
-                <div className="dropdown">
+                {/* <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                     </div>
@@ -119,7 +130,7 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {links}
                     </ul>
-                </div>
+                </div> */}
             </div>
         </div>
     );

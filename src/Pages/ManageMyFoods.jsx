@@ -60,6 +60,9 @@ const ManageMyFoods = () => {
     };
 
 
+    
+
+
     const updateFoodMutation = useMutation({
         mutationFn: async () => {
             return await axios.put(
@@ -108,7 +111,7 @@ const ManageMyFoods = () => {
     };
 
     return (
-        <div className="max-w-6xl bg-gray-50 min-h-screen mx-auto my-10 ">
+        <div className="lg:max-w-6xl p-5 bg-gray-50 min-h-screen mx-auto my-10 ">
             <h2 className="text-3xl font-bold mb-6 p-4 text-center">Manage My Foods</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full border rounded-lg">

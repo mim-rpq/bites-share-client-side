@@ -18,7 +18,7 @@ const FeaturedFoodsCard = ({ food }) => {
     return (
         <div className="border border-primary p-4 bg-white rounded-xl shadow-2xl hover:shadow-md transition-all">
             <img src={foodImage} alt={foodName} className="w-full h-72 object-cover rounded" />
-            <div className='flex justify-between  items-end pt-9 '>
+            <div className='flex flex-col lg:flex-row lg:justify-between  lg:items-end pt-9 '>
                 <div className='space-y-1'>
                     <h2 className="text-xl font-semibold mt-2">{foodName}</h2>
                     <p>Quantity:{foodQuantity}</p>
@@ -26,7 +26,7 @@ const FeaturedFoodsCard = ({ food }) => {
                     <p className="text-xs text-gray-400 flex items-center gap-2"> <CiTimer size={15} />Expires: {new Date(expiredDateTime).toLocaleString()}</p>
                 </div>
 
-                <div className='flex items-center mt-7 gap-2 '>
+                <div className='flex flex-col md:flex-row items-center mt-7 gap-2 '>
                     <div>
                         <img src={userPhotoURL} className='w-11 h-11 rounded-full border-2 border-primary p-1' alt="" />
                     </div>
