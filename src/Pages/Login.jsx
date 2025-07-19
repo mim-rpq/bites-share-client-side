@@ -12,13 +12,13 @@ import Lottie from 'lottie-react';
 
 const Login = () => {
 
-    const { signIn, setUser, userLoading } = use(AuthContext)
+    const { signIn, setUser, user, userLoading } = use(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
     const [passwordInput, setPasswordInput] = useState('')
     const [emailInput, setEmailInput] = useState('');
     const navigate = useNavigate();
     const location = useLocation()
-    const from = location.state || '/'
+
 
 
     const handleLogin = (e) => {
@@ -56,7 +56,7 @@ const Login = () => {
                 const user = result.user
                 setUser(user);
                 toast.success('Login successful!')
-                navigate(from);
+                navigate(`${location.state ? location.state : '/'}`);
 
             })
 
@@ -82,11 +82,11 @@ const Login = () => {
 
     }
 
-    if (userLoading) return <Spinner />;
+    if (userLoading, user) return <Spinner />;
     return (
         <>
             <div className='flex lg:flex-row md:flex-col justify-center min-h-screen   my-12 md:my-20 lg:my-0 items-center'>
-                <div className=" bg-white p-2 w-full max-w-md shadow-2xl ">
+                <div className=" py-5 bg-white p-2 w-full max-w-md shadow-2xl ">
 
                     <h2 className='md:text-4xl text-2xl font-bold text-center py-5  text-primary
                     '>Please Login!</h2>
@@ -124,14 +124,15 @@ const Login = () => {
                             <div className='mt-1'><a className="link link-hover text-secondary underline underline-offset-1  ">Forgot password?</a></div>
                             <button type='submit' className="btn  mt-4 bg-primary hover:bg-secondary outline-0 text-white">Login</button>
 
-                            <SocialLogin></SocialLogin>
-                            <p className='font-semibold text-center mt-3 text-primary'>Don't have an account? Please <Link to='/auth/register' className='text-secondary underline'>Register</Link></p>
+
                         </fieldset>
                     </form>
+                    <SocialLogin></SocialLogin>
+                    <p className='font-semibold text-center mt-3 text-primary'>Don't have an account? Please <Link to='/auth/register' className='text-secondary underline'>Register</Link></p>
                 </div>
 
                 <div>
-                        <Lottie style={{ width: '400px', height: '400px' }} animationData={signInLottie} loop={true}></Lottie>
+                    <Lottie style={{ width: '400px', height: '400px' }} animationData={signInLottie} loop={true}></Lottie>
 
                 </div>
 

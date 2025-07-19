@@ -87,7 +87,7 @@ const Footer = () => {
 
       {/* Bottom Line */}
       <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} BiteShare. All rights reserved.
+        © {new Date().getFullYear()} BitesShare. All rights reserved.
       </div>
     </footer>
   );

@@ -27,7 +27,7 @@ const AddFood = () => {
         // console.log('data', newFoodItem);
 
 
-        axios.post('http://localhost:5000/foods', newFoodItem)
+        axios.post('https://bites-share-server.vercel.app/foods', newFoodItem)
             .then(data => {
                 
                 if(data.data.insertedId){

@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { useContext } from 'react';
 import { Link, Navigate, NavLink } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 import defaultUser from '../assets/images/defaultUser.png'
@@ -7,7 +7,7 @@ import logo from '../assets/images/logo2.png'
 
 const Navbar = () => {
 
-    const { user, userLoading, logOut } = use(AuthContext)
+    const { user, userLoading, logOut } = useContext(AuthContext)
 
     const handleLogOut = () => {
         logOut().then(() => {
@@ -18,6 +18,8 @@ const Navbar = () => {
             toast.error(error)
         })
     }
+
+    console.log(user);
 
     const links = <>
         <li className='mr-4'>

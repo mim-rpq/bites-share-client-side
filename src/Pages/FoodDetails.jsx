@@ -32,7 +32,7 @@ const FoodDetails = () => {
         setIsRequesting(true);
         try {
             const response = await axios.post(
-                'http://localhost:5000/foodRequests',
+                'https://bites-share-server.vercel.app/foodRequests',
                 {
                     requesterEmail: user.email,
                     requestNotes: notes,
