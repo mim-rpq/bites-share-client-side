@@ -32,7 +32,7 @@ const Banner = () => {
                                 src={animationImg2}
                                 animate={{ x: [100, 150, 100] }}
                                 transition={{ duration: 10, delay: 2, repeat: Infinity }}
-                                className=" hidden lg:blok lg:max-w-md max-h-80 border-l-[14px] border-primary border-b-[14px] rounded-t-[40px] rounded-br-[40px] shadow-2xl"
+                                className=" hidden lg:block lg:max-w-md max-h-80 border-l-[14px] border-primary border-b-[14px] rounded-t-[40px] rounded-br-[40px] shadow-2xl"
                             />
                         </div>
                         <div className='flex-1 text-white'>

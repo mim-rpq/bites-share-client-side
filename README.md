@@ -3,7 +3,7 @@
 
 Bites Share is a food-sharing platform built with React, Firebase, and MongoDB. It allows users to donate or request food items in their community, helping reduce food waste and support those in need.
 
-Live Site: []
+Live Site: [https://simple-firebase-auth-176a3.web.app]
 
 ---
 
