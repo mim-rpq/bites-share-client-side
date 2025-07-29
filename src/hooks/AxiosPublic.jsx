@@ -4,7 +4,7 @@ import React from 'react';
 
 
 const axiosPublic = axios.create({
-    baseURL: `http://localhost:5000`
+    baseURL: `https://bites-share-server.vercel.app`
 })
 
 const useAxiosPublic = () => {

@@ -16,7 +16,7 @@ const MyFoodRequest = () => {
 
     setLoading(true);
     axios
-      .get(`http://localhost:5000/foodRequests`, {
+      .get(`https://bites-share-server.vercel.app/foodRequests`, {
         headers: { Authorization: `Bearer ${user.accessToken}` }
       })
       .then(res => {

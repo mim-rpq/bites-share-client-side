@@ -11,7 +11,7 @@ const AvailableFoods = () => {
   const { isLoading, data: allFoods = [], refetch } = useQuery({
     queryKey: ['availableFoods', sortOrder],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/foods/availableFoods?sort=${sortOrder}`);
+      const res = await fetch(`https://bites-share-server.vercel.app/foods/availableFoods?sort=${sortOrder}`);
       return res.json();
     }
   });
