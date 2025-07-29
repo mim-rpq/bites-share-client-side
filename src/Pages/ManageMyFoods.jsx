@@ -19,7 +19,7 @@ const ManageMyFoods = () => {
         queryKey: ['myFoods', user?.email],
         enabled: !!user?.email,
         queryFn: async () => {
-            const res = await axios.get(`https://bites-share-server.vercel.app/foods/myAddedFood/user`, {
+            const res = await axios.get(`http://localhost:5000/foods/myAddedFood/user`, {
                 headers: { Authorization: `Bearer ${user.accessToken}` },
             });
             return res.data;
@@ -30,7 +30,7 @@ const ManageMyFoods = () => {
 
     const deleteFoodMutation = useMutation({
         mutationFn: async (id) => {
-            return await axios.delete(`https://bites-share-server.vercel.app/foods/myAddedFood/${id}`, {
+            return await axios.delete(`http://localhost:5000/foods/myAddedFood/${id}`, {
                 headers: { Authorization: `Bearer ${user.accessToken}` },
             });
         },
@@ -66,7 +66,7 @@ const ManageMyFoods = () => {
     const updateFoodMutation = useMutation({
         mutationFn: async () => {
             return await axios.put(
-                `https://bites-share-server.vercel.app/foods/myAddedFood/${selectedFood._id}`,
+                `http://localhost:5000/foods/myAddedFood/${selectedFood._id}`,
                 updatedData,
                 {
                     headers: { Authorization: `Bearer ${user.accessToken}` },

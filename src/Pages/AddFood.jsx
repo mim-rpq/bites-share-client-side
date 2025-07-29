@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthContext';
 import banner from '../assets/images/banner3.jpg'
 import logo from '../assets/images/logo2.png'
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 
 
 const AddFood = () => {
-    const { user } = use(AuthContext);
+    const { user } = useContext(AuthContext);
     const handleAddFood = e => {
         e.preventDefault();
 
@@ -27,7 +27,7 @@ const AddFood = () => {
         // console.log('data', newFoodItem);
 
 
-        axios.post('https://bites-share-server.vercel.app/foods', newFoodItem)
+        axios.post('http://localhost:5000/foods', newFoodItem)
             .then(data => {
                 
                 if(data.data.insertedId){

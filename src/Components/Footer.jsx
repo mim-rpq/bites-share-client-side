@@ -1,6 +1,5 @@
 
 import React from "react";
-import { useLocation } from "react-router";
 import {
   FaFacebookF,
   FaTwitter,
@@ -10,13 +9,6 @@ import {
 import logo from '../assets/images/logo2.png'
 
 const Footer = () => {
-  const location = useLocation();
-  const hiddenRoutes = ["/auth/login", "/auth/register"];
-
-  if (hiddenRoutes.includes(location.pathname)) {
-    return null; // Hide footer on login/register pages
-  }
-
   return (
     <footer className="bg-gray-900 text-white px-6 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">

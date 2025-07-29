@@ -1,30 +1,42 @@
-import React, { use } from 'react';
+import React, {  useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 import { toast } from 'react-toastify';
 
 const SocialLogin = () => {
-    const { signUpWithGoogle,setUser } = use(AuthContext)
+    const { signUpWithGoogle, setUser } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
 
 
 
-        const handleSignUpWithGoogle = () => {
-            signUpWithGoogle()
-                .then((result) => {
-                    const user = result.user
-                    setUser(user)
-                    toast.success('Login successful!')
-                    navigate(`${location.state ? location.state : '/'}`);
-    
-                })
-    
-                .catch((error) => {
-                    const errorMessage = error.message;
-                    console.log(errorMessage);
-                })
-        }
+    const handleSignUpWithGoogle = () => {
+        signUpWithGoogle()
+            .then((result) => {
+                const user = result.user
+
+                const safeEmail = user.email || user.providerData?.[0]?.email || null;
+
+                
+                const customUser = {
+                    ...user,
+                    email: safeEmail,
+                };
+
+                setUser(customUser);
+                // setUser(user)
+
+                // console.log(customUser);
+                toast.success('Login successful!')
+                navigate(`${location.state ? location.state : '/'}`);
+
+            })
+
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            })
+    }
     return (
         <div>
             <div className="divider">OR</div>

@@ -17,6 +17,7 @@ const AuthProvider = ({ children }) => {
     const signUpWithGoogle = () => {
         setUserLoading(true)
         const provider = new GoogleAuthProvider()
+        provider.addScope('email');
 
         return signInWithPopup(auth, provider)
     }
@@ -51,6 +52,7 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
+    // console.log(user);
     const authData = {
         user,
         setUser,

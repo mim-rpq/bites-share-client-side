@@ -1,5 +1,5 @@
 
-import React, { use, useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { toast } from 'react-toastify';
@@ -12,7 +12,7 @@ import Lottie from 'lottie-react';
 
 const Login = () => {
 
-    const { signIn, setUser, user, userLoading } = use(AuthContext)
+    const { signIn, setUser, user, userLoading } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
     const [passwordInput, setPasswordInput] = useState('')
     const [emailInput, setEmailInput] = useState('');

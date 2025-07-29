@@ -16,7 +16,7 @@ const Home = () => {
     const { isPending, data: featuredFoods } = useQuery({
         queryKey: ['featuredFoods'],
         queryFn: async () => {
-            const res = await fetch('https://bites-share-server.vercel.app/foods/featuredFoods');
+            const res = await fetch('http://localhost:5000/foods/featuredFoods');
 
             return res.json();
         }

@@ -27,12 +27,12 @@ const FoodDetails = () => {
         userPhotoURL,
         userEmail
     } = food;
-    console.log(user.accessToken);
+    // console.log(user.accessToken);
     const handleRequest = async () => {
         setIsRequesting(true);
         try {
             const response = await axios.post(
-                'https://bites-share-server.vercel.app/foodRequests',
+                'http://localhost:5000/foodRequests',
                 {
                     requesterEmail: user.email,
                     requestNotes: notes,

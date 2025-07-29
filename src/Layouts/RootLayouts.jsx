@@ -1,19 +1,26 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Footer from '../Components/Footer';
-import Navbar from '../Components/Navbar';
 import Header from '../Components/Header';
+import Spinner from '../Components/Spinner';
 
 const RootLayouts = () => {
+    const navigation = useNavigation();
     return (
         <div>
 
             <header>
-               <Header></Header>
+                <Header></Header>
             </header>
             <main className='min-h-screen'>
                 <section>
-                    <Outlet></Outlet>
+                    {
+                        navigation.state === 'loading' ? (
+                            <Spinner></Spinner>
+                        ) : (
+                            <Outlet></Outlet>
+                        )
+                    }
                 </section>
             </main>
             <footer>
