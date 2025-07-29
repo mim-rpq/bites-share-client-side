@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router';
-import SocialLogin from '../Components/SocialLogin';
 import Spinner from '../Components/Spinner';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../Provider/AuthContext';
@@ -94,7 +93,7 @@ const Register = () => {
 
                         <button type='submit' className="btn mt-4 bg-primary outline-0 text-white hover:bg-secondary">Register</button>
 
-                        <SocialLogin />
+                        {/* <SocialLogin /> */}
 
                         <p className='text-primary font-semibold text-center mt-3'>
                             Already have an account? Please <Link to='/auth/login' className='text-secondary underline'>Login</Link>

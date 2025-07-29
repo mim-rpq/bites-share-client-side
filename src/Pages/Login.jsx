@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import Spinner from '../Components/Spinner';
-import SocialLogin from '../Components/SocialLogin';
 import { AuthContext } from '../Provider/AuthContext';
 import signInLottie from '../assets/lottie/Eat Kind.json'
 import Lottie from 'lottie-react';
@@ -127,7 +126,7 @@ const Login = () => {
 
                         </fieldset>
                     </form>
-                    <SocialLogin></SocialLogin>
+                    {/* <SocialLogin></SocialLogin> */}
                     <p className='font-semibold text-center mt-3 text-primary'>Don't have an account? Please <Link to='/auth/register' className='text-secondary underline'>Register</Link></p>
                 </div>
 
