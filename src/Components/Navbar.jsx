@@ -5,6 +5,7 @@ import { AuthContext } from '../Provider/AuthContext';
 import defaultUser from '../assets/images/defaultUser.png'
 import { toast } from 'react-toastify';
 import logo from '../assets/images/logo2.png'
+import ToggleThemeForAll from './ToggleThemeForAll';
 
 const Navbar = () => {
 
@@ -149,7 +150,7 @@ const Navbar = () => {
             className={`navbar h-[80px] transition-all duration-300 z-50 
     ${!isScrolled && isHome
                     ? "absolute top-0 bg-transparent"
-                    : " backdrop-blur-md bg-primary-100 bg-opacity-70 shadow-md"
+                    : "fixed top-0 backdrop-blur-md bg-primary-100 bg-opacity-70 shadow-md"
                 } 
     w-full`}
         >
@@ -180,10 +181,14 @@ const Navbar = () => {
                 {/* Center links */}
                 <div className="navbar-center hidden lg:flex">
                     <ul className="flex items-center gap-3 px-1">{links}</ul>
+
                 </div>
 
                 {/* Right side */}
                 <div className="navbar-end">
+                    <div className='mr-2'>
+                        <ToggleThemeForAll></ToggleThemeForAll>
+                    </div>
                     {userLoading ? null : user ? (
                         <div className="flex gap-2">
                             <a data-tooltip-id="my-tooltip">
@@ -195,7 +200,7 @@ const Navbar = () => {
                             </a>
                             <Link
                                 onClick={handleLogOut}
-                                className="btn px-2 py-2 rounded-sm lg:font-medium md:rounded-md transition hover:scale-110 duration-300 bg-primary lg:mr-4 text-white lg:px-6 hover:bg-secondary"
+                                className="btn px-2 py-2 border-0 rounded-sm lg:font-medium md:rounded-md transition hover:scale-110 duration-300 bg-primary lg:mr-4 text-white lg:px-6 hover:bg-secondary"
                             >
                                 Logout
                             </Link>
