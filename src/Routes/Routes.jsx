@@ -12,6 +12,7 @@ import Register from "../Pages/Register";
 import PrivateRoute from "../Provider/PrivateRoute";
 import FoodDetails from "../Pages/FoodDetails";
 import Spinner from "../Components/Spinner";
+import Contact from "../Components/Contact";
 
 
 
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <AddFood></AddFood>
                 </PrivateRoute>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
             }
         ]
     },

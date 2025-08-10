@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="navbar-start">
 
             <img src={logo} alt="" />
-            <h1 className='text-primary ml-3 font-bold text-2xl lg:text-4xl'>Bites<span className='text-3xl lg:text-5xl text-secondary'>Share</span></h1>
+            <h1 className='text-primary ml-3 font-bold text-2xl lg:text-3xl'>Bites<span className='text-3xl lg:text-4xl text-secondary'>Share</span></h1>
 
           </div>
           <p className="text-sm text-gray-400">

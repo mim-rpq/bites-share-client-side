@@ -124,6 +124,23 @@ const Navbar = () => {
                 Add Food
             </NavLink>
         </li>
+        <li className='mr-4'>
+            <NavLink
+                className={({ isActive }) =>
+                    `${isActive
+                        ? "text-secondary rounded-none border-b-2 pb-2"
+                        : !isHome
+                            ? "text-primary hover:border-b-2 pb-2 border-base-200"
+                            : isScrolled
+                                ? "text-primary hover:border-b-2 pb-2 border-base-200"
+                                : "text-white hover:border-b-2 pb-2 border-base-200"
+                    }`
+                }
+                to='/contact'
+            >
+                Contact Us
+            </NavLink>
+        </li>
     </>
 
     return (
@@ -155,14 +172,14 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className="navbar-start">
                     <img src={logo} className="hidden md:block" alt="" />
-                    <h1 className="text-primary ml-3 font-bold text-2xl lg:text-4xl">
-                        Bites<span className="text-3xl lg:text-5xl text-secondary">Share</span>
+                    <h1 className="text-primary ml-3 font-bold text-2xl lg:text-3xl">
+                        Bites<span className="text-2xl lg:text-4xl text-secondary">Share</span>
                     </h1>
                 </div>
 
                 {/* Center links */}
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="flex items-center gap-5 px-1">{links}</ul>
+                    <ul className="flex items-center gap-3 px-1">{links}</ul>
                 </div>
 
                 {/* Right side */}
