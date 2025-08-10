@@ -33,7 +33,7 @@ const AvailableFoods = () => {
   }
 
   return (
-    <div className="px-4 py-11 max-w-11/12 mx-auto">
+    <div className="px-4 py-11 max-w-11/12 mx-auto my-24">
       <h1 className='text-4xl text-center font-bold text-primary mb-6'>Available Foods</h1>
 
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">

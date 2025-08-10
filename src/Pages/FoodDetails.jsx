@@ -85,7 +85,7 @@ const FoodDetails = () => {
 
 
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className='w-11/12 mx-auto mt-[150px]'>
             <div className="max-w-3xl p-6">
                 <img src={foodImage} alt={foodName} className="w-full h-96 object-cover rounded-xl" />
                 <div className="mt-6 space-y-3">

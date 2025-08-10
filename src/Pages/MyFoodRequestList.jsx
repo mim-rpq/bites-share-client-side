@@ -2,8 +2,8 @@ import FoodRequestRow from './FoodRequestRow';
 
 const MyFoodRequestList = ({ requests }) => {
     return (
-        <div className="max-w-6xl mx-auto  min-h-screen lg:pb-32  p-4">
-            <h2 className="text-2xl font-bold mb-4 text-center">My Food Requests</h2>
+        <div className="w-11/12  mx-auto  min-h-screen lg:pb-32 my-24 p-4">
+            <h2 className="text-2xl font-bold mb-4 text-center text-primary ">My Food Requests</h2>
 
             <div className="overflow-x-auto bg-white min-h-screen rounded-lg shadow-md">
                 <table className="table w-full text-sm md:text-base">
