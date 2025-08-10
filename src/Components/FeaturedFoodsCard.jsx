@@ -8,11 +8,8 @@ const FeaturedFoodsCard = ({ food }) => {
         foodName,
         foodImage,
         foodQuantity,
-        pickupLocation,
-        expiredDateTime,
-        userName,
-        userPhotoURL,
-        userEmail
+        additionalNotes,
+
     } = food;
 
     return (
@@ -22,18 +19,7 @@ const FeaturedFoodsCard = ({ food }) => {
                 <div className='space-y-1'>
                     <h2 className="text-xl font-semibold mt-2">{foodName}</h2>
                     <p>Quantity:{foodQuantity}</p>
-                    <p className='flex items-center gap-2'> <FaLocationDot color='red' /><span className='font-bold'>Location</span>:{pickupLocation}</p>
-                    <p className="text-xs text-gray-400 flex items-center gap-2"> <CiTimer size={15} />Expires: {new Date(expiredDateTime).toLocaleString()}</p>
-                </div>
-
-                <div className='flex flex-col md:flex-row items-center mt-7 gap-2 '>
-                    <div>
-                        <img src={userPhotoURL} className='w-11 h-11 rounded-full border-2 border-primary p-1' alt="" />
-                    </div>
-                    <div>
-                        <p className="text-sm text-gray-500 ">Donor: {userName}</p>
-                        <p className="text-sm text-gray-500 ">{userEmail}</p>
-                    </div>
+                    <p>Details:{additionalNotes}</p>
                 </div>
             </div>
 

@@ -9,7 +9,7 @@ const Banner = () => {
 
 
 
-        <div className="relative w-full h-[650px]">
+        <div className="relative w-full h-[800px]">
             {/* Background Image */}
             <img
                 src={bannerImg1}
