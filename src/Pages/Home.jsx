@@ -37,9 +37,9 @@ const Home = () => {
 
             <Banner></Banner>
 
-            <div className='py-28  bg-gray-50  '>
+            <div className='py-20  bg-gray-50  '>
                 <div className='max-w-11/12 mx-auto'>
-                    <div className='flex justify-center items-center my-6'>
+                    <div className='flex justify-center items-center mb-6'>
                         <img src={featuredFoodTItleLogo} alt="" />
                         <h2 className="text-3xl text-primary font-bold  text-center"> Featured <span className='text-secondary'> Foods</span></h2>
                     </div>
@@ -62,7 +62,7 @@ const Home = () => {
                     backgroundPosition: 'bottom',
                     backgroundRepeat: "no-repeat"
                 }} className='w-full  h-full absolute inset-0 z-0'>
-                    <div className='relative z-10 max-w-7xl mx-auto '>
+                    <div className='relative z-10 w-11/12 mx-auto '>
                         <Count></Count>
                     </div>
                 </div>

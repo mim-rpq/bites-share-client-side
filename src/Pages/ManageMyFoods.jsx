@@ -66,7 +66,7 @@ const ManageMyFoods = () => {
     const updateFoodMutation = useMutation({
         mutationFn: async () => {
             return await axios.put(
-                `https://bites-share-server.vercel.app/foods/myAddedFood/${selectedFood._id}`,
+                `http://localhost:5000/foods/myAddedFood/${selectedFood._id}`,
                 updatedData,
                 {
                     headers: { Authorization: `Bearer ${user.accessToken}` },
@@ -111,7 +111,7 @@ const ManageMyFoods = () => {
     };
 
     return (
-        <div className="lg:w-11/12 mt-20   mx-auto  ">
+        <div className="lg:w-11/12 pt-20   mx-auto  ">
             <div className='bg-gray-50 min-h-screen p-5'>
                 <h2 className="text-3xl font-bold mb-6 p-4  text-primary text-center">Manage My Foods</h2>
                 <div className="overflow-x-auto">

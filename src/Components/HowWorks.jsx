@@ -34,7 +34,7 @@ const HowItWorks = () => {
 
     return (
         <div className="bg-secondary/10">
-            <div className="px-8 py-16 flex flex-col md:flex-row max-w-7xl mx-auto justify-between gap-2 lg:gap-9 items-center">
+            <div className=" py-20 flex flex-col md:flex-row w-11/12 mx-auto justify-between gap-2 lg:gap-9 items-center">
                 <div className="w-full md:w-1/2 mt-10 md:mt-0 flex justify-center">
                     <img src={img} alt="illustration" className="md:w-full rounded-xl" />
                 </div>

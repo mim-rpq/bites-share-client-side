@@ -20,7 +20,7 @@ const Banner = () => {
             {/*  Transparent Overlay */}
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                 <div className="hero bg-base-200 min-h-96">
-                    <div className="hero-content flex-col lg:flex-row-reverse">
+                    <div className="flex justify-between items-center  w-11/12 mx-auto gap-10 flex-col lg:flex-row-reverse">
                         <div className='flex-1'>
                             <motion.img
                                 src={animationImg1}

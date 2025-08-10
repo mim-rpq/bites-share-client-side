@@ -149,7 +149,7 @@ const Navbar = () => {
             className={`navbar h-[80px] transition-all duration-300 z-50 
     ${!isScrolled && isHome
                     ? "absolute top-0 bg-transparent"
-                    : "fixed top-0 backdrop-blur-md bg-primary-100 bg-opacity-70 shadow-md"
+                    : " backdrop-blur-md bg-primary-100 bg-opacity-70 shadow-md"
                 } 
     w-full`}
         >
