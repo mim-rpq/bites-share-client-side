@@ -15,12 +15,8 @@ const AvailableFoodCard = ({ food }) => {
         foodName,
         foodImage,
         foodQuantity,
-        pickupLocation,
-        expiredDateTime,
         additionalNotes,
-        userName,
-        userPhotoURL,
-        userEmail
+  
     } = food;
 
 
@@ -32,9 +28,11 @@ const AvailableFoodCard = ({ food }) => {
                 <img src={foodImage} alt={foodName} className="w-full h-72 object-cover rounded" />
                 <div className='pt-9'>
                     <div className='space-y-1'>
-                        <h2 className="text-xl font-semibold mt-2">{foodName}</h2>
-                        <p>Quantity: <span className='text-primary'>{foodQuantity}</span></p>
-                        <p className='text-gray-500'>{additionalNotes}</p>
+                        <h2 className="text-xl text-black font-semibold mt-2">{foodName}</h2>
+                        <p className='text-black'>Quantity: <span className='text-primary'>{foodQuantity}</span></p>
+                        <div className=''>
+                            <p className='text-black'>{additionalNotes}</p>
+                        </div>
                     </div>
                 </div>
             </div>

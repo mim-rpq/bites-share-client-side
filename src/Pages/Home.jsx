@@ -37,7 +37,7 @@ const Home = () => {
 
             <Banner></Banner>
 
-            <div className='py-20  bg-gray-50  '>
+            <div className='py-20    '>
                 <div className='max-w-11/12 mx-auto'>
                     <div className='flex justify-center items-center mb-6'>
                         <img src={featuredFoodTItleLogo} alt="" />

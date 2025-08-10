@@ -55,7 +55,7 @@ const Contact = () => {
                 <h1 className="text-3xl font-bold text-center text-primary mb-6">
                     Contact Us
                 </h1>
-                <p className="text-center text-gray-600 mb-8">
+                <p className="text-center text-secondary mb-8">
                     Have a question or want to know more about BiteShare? Fill out the form
                     below, and we’ll get back to you soon.
                 </p>
@@ -65,7 +65,7 @@ const Contact = () => {
                     className="bg-white shadow-lg rounded-lg p-6 space-y-4"
                 >
                     <div>
-                        <label className="block font-medium mb-1">Name</label>
+                        <label className="block font-medium mb-1 text-black">Name</label>
                         <input
                             type="text"
                             name="name"
@@ -73,12 +73,12 @@ const Contact = () => {
                             onChange={handleChange}
                             required
                             placeholder="Your name"
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary"
+                            className="w-full px-4 py-2 border placeholder-gray-500 rounded-lg focus:outline-none text-black focus:border-primary"
                         />
                     </div>
 
                     <div>
-                        <label className="block font-medium mb-1">Email</label>
+                        <label className="block font-medium mb-1 text-black">Email</label>
                         <input
                             type="email"
                             name="email"
@@ -86,12 +86,12 @@ const Contact = () => {
                             onChange={handleChange}
                             required
                             placeholder="Your email"
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary"
+                            className="w-full px-4 py-2 border placeholder-gray-500 text-black rounded-lg focus:outline-none focus:border-primary"
                         />
                     </div>
 
                     <div>
-                        <label className="block font-medium mb-1">Message</label>
+                        <label className="block font-medium mb-1 placeholder-gray-500 text-black">Message</label>
                         <textarea
                             name="message"
                             value={formData.message}
@@ -99,7 +99,7 @@ const Contact = () => {
                             required
                             placeholder="Write your message..."
                             rows="4"
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary"
+                            className="w-full px-4 py-2 border placeholder-gray-500 text-black rounded-lg focus:outline-none focus:border-primary"
                         />
                     </div>
 

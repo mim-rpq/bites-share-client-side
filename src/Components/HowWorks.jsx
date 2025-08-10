@@ -33,14 +33,14 @@ const HowItWorks = () => {
     }
 
     return (
-        <div className="bg-secondary/10">
+        <div className="">
             <div className=" py-20 flex flex-col md:flex-row w-11/12 mx-auto justify-between gap-2 lg:gap-9 items-center">
                 <div className="w-full md:w-1/2 mt-10 md:mt-0 flex justify-center">
                     <img src={img} alt="illustration" className="md:w-full rounded-xl" />
                 </div>
 
                 <div className="w-full md:w-1/2">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6">How to Use Our Platform</h2>
+                    <h2 className="text-3xl font-bold text-primary mb-6">How to Use Our Platform</h2>
                     <div className="flex space-x-6 mb-6 border-b border-gray-300">
                         <button
                             onClick={() => setActiveTab("share")}
@@ -72,7 +72,7 @@ const HowItWorks = () => {
 
                     <button
                         onClick={handleGetStart}
-                        className="mt-6 px-5 py-2 bg-primary text-white border rounded shadow hover:bg-secondary cursor-pointer transition"
+                        className="mt-6 px-5 py-2 bg-primary  text-white  rounded shadow hover:bg-secondary cursor-pointer transition"
                     >
                         {activeTab === "share" ? "Share Food" : "Find Food"}
                     </button>

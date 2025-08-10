@@ -72,11 +72,11 @@ const AddFood = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {/* Food Name */}
                             <div>
-                                <label className="block text-sm font-medium mb-1">Food Name</label>
+                                <label className="block text-black text-sm font-medium mb-1">Food Name</label>
                                 <input
                                     type="text"
                                     name="foodName"
-                                    className="input input-bordered w-full"
+                                    className="input text-black input-bordered w-full placeholder-gray-500"
                                     placeholder='Food Name'
                                     required
                                 />
@@ -84,11 +84,11 @@ const AddFood = () => {
 
                             {/* Food Image URL */}
                             <div>
-                                <label className="block text-sm font-medium mb-1">Food Image URL</label>
+                                <label className="block text-black text-sm font-medium mb-1">Food Image URL</label>
                                 <input
                                     type="text"
                                     name="foodImage"
-                                    className="input input-bordered w-full"
+                                    className="input text-black input-bordered w-full placeholder-gray-500"
                                     placeholder='Food Image URL '
                                     required
                                 />
@@ -96,11 +96,11 @@ const AddFood = () => {
 
                             {/* Food Quantity */}
                             <div>
-                                <label className="block text-sm font-medium mb-1">Food Quantity</label>
+                                <label className="block text-black text-sm font-medium mb-1">Food Quantity</label>
                                 <input
                                     type="text"
                                     name="foodQuantity"
-                                    className="input input-bordered w-full"
+                                    className="input text-black input-bordered w-full placeholder-gray-500"
                                     placeholder='Food Quantity'
                                     required
                                 />
@@ -108,11 +108,11 @@ const AddFood = () => {
 
                             {/* Pickup Location */}
                             <div>
-                                <label className="block text-sm font-medium mb-1">Pickup Location</label>
+                                <label className="block text-black text-sm font-medium mb-1">Pickup Location</label>
                                 <input
                                     type="text"
                                     name="pickupLocation"
-                                    className="input input-bordered w-full"
+                                    className="input text-black input-bordered w-full placeholder-gray-500"
                                     placeholder='Pickup Location'
                                     required
                                 />
@@ -120,11 +120,11 @@ const AddFood = () => {
 
                             {/* Expired Date/Time */}
                             <div>
-                                <label className="block text-sm font-medium mb-1">Expired Date & Time</label>
+                                <label className="block text-black text-sm font-medium mb-1">Expired Date & Time</label>
                                 <input
                                     type="datetime-local"
                                     name="expiredDateTime"
-                                    className="input input-bordered w-full"
+                                    className="input text-black input-bordered w-full placeholder-gray-500"
                                     placeholder='Expired Date & Time'
                                     required
                                 />
@@ -133,10 +133,10 @@ const AddFood = () => {
 
                             {/* Additional Notes */}
                             <div className=''>
-                                <label className="block text-sm font-medium mb-1">Additional Notes</label>
+                                <label className="block text-black text-sm font-medium mb-1">Additional Notes</label>
                                 <textarea
                                     name="additionalNotes"
-                                    className="textarea textarea-bordered w-full"
+                                    className="textarea text-black textarea-bordered w-full placeholder-gray-500"
                                     rows={3}
                                     placeholder='Add additional info'
                                 ></textarea>
@@ -149,12 +149,12 @@ const AddFood = () => {
 
                             {/* Donor Name (read-only) */}
                             <div>
-                                <label className="block text-sm font-medium mb-1">Donor Name</label>
+                                <label className="block text-black text-sm font-medium mb-1">Donor Name</label>
                                 <input
                                     type="text"
                                     value={user?.displayName || ''}
                                     readOnly
-                                    className="input input-bordered w-full bg-gray-100"
+                                    className="input text-black input-bordered w-full bg-gray-100 placeholder-gray-500"
 
 
                                 />
@@ -162,23 +162,23 @@ const AddFood = () => {
 
                             {/* Donor Email (read-only) */}
                             <div>
-                                <label className="block text-sm font-medium mb-1">Donor Email</label>
+                                <label className="block text-black text-sm font-medium mb-1">Donor Email</label>
                                 <input
                                     type="email"
                                     value={user?.email || ''}
                                     readOnly
-                                    className="input input-bordered w-full bg-gray-100"
+                                    className="input text-black input-bordered w-full bg-gray-100"
                                 />
                             </div>
                         </div>
 
                         {/* Donor Photo */}
                         <div className="mt-4 flex justify-center flex-col items-center">
-                            <label className="block text-sm font-medium mb-1">Donor Photo</label>
+                            <label className="block text-sm text-black font-medium mb-1">Donor Photo</label>
                             <img
                                 src={user?.photoURL}
                                 alt="Donor"
-                                className="w-16 h-16 rounded-full border"
+                                className="w-16 h-16  rounded-full border"
                             />
                         </div>
 

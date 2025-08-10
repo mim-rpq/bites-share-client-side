@@ -17,9 +17,9 @@ const FeaturedFoodsCard = ({ food }) => {
             <img src={foodImage} alt={foodName} className="w-full h-72 object-cover rounded" />
             <div className='flex flex-col lg:flex-row lg:justify-between  lg:items-end pt-9 '>
                 <div className='space-y-1'>
-                    <h2 className="text-xl font-semibold mt-2">{foodName}</h2>
-                    <p>Quantity:{foodQuantity}</p>
-                    <p>Details:{additionalNotes}</p>
+                    <h2 className="text-xl text-black font-semibold mt-2">{foodName}</h2>
+                    <p className='text-black'>Quantity:{foodQuantity}</p>
+                    <p className='text-black'>Details:{additionalNotes}</p>
                 </div>
             </div>
 
