@@ -9,6 +9,7 @@ import { Link } from 'react-router';
 import group from '../assets/images/banner3.jpg'
 import Count from '../Components/Count';
 import HowItWorks from '../Components/HowWorks';
+import Testimonial from '../Components/Testimonial';
 
 
 const Home = () => {
@@ -70,6 +71,10 @@ const Home = () => {
 
             <div>
                 <HowItWorks></HowItWorks>
+            </div>
+
+            <div>
+                <Testimonial></Testimonial>
             </div>
 
         </div>

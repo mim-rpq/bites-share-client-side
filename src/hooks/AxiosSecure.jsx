@@ -4,7 +4,7 @@ import { AuthContext } from '../Provider/AuthContext';
 
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://bites-share-server.vercel.app",
 });
 
 const useAxiosSecure = () => {

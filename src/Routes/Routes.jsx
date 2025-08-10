@@ -45,7 +45,7 @@ const router = createBrowserRouter([
 
             {
                 path: '/foodDetails/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/foods/availableFoods/${params.id}`),
+                loader: ({ params }) => fetch(`https://bites-share-server.vercel.app/foods/availableFoods/${params.id}`),
                 hydrateFallbackElement: <Spinner></Spinner>,
                 element: <FoodDetails></FoodDetails>
             },
