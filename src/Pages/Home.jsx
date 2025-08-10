@@ -10,6 +10,7 @@ import group from '../assets/images/banner3.jpg'
 import Count from '../Components/Count';
 import HowItWorks from '../Components/HowWorks';
 import Testimonial from '../Components/Testimonial';
+import UpcomingEvents from '../Components/UpcomingEvents ';
 
 
 const Home = () => {
@@ -56,6 +57,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
             <div className='relative  min-h-[600px] '>
                 <div style={{
                     backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3), transparent),url(${group})`,
@@ -67,6 +69,10 @@ const Home = () => {
                         <Count></Count>
                     </div>
                 </div>
+            </div>
+
+            <div>
+                <UpcomingEvents></UpcomingEvents>
             </div>
 
             <div>
