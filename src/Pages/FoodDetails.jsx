@@ -33,7 +33,7 @@ const FoodDetails = () => {
         setIsRequesting(true);
         try {
             const response = await axios.post(
-                'https://bites-share-server.vercel.app/foodRequests',
+                'http://localhost:5000/foodRequests',
                 {
                     requesterEmail: user.email,
                     requestNotes: notes,
@@ -103,7 +103,13 @@ const FoodDetails = () => {
                     </div>
                     <button
                         className="btn btn-primary mt-5"
-                        onClick={() => document.getElementById('request_modal').showModal()}
+                        onClick={() => {
+                            if (!user) {
+                               navigate('/auth/login', { state: { from: `/foodDetails/${foodId}` } });
+                            } else {
+                                document.getElementById('request_modal').showModal();
+                            }
+                        }}
                     >
                         Request This Food
                     </button>

@@ -1,5 +1,5 @@
 
-import React, {  useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { toast } from 'react-toastify';
@@ -17,7 +17,7 @@ const Login = () => {
     const [emailInput, setEmailInput] = useState('');
     const navigate = useNavigate();
     const location = useLocation()
-
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleLogin = (e) => {
@@ -55,7 +55,8 @@ const Login = () => {
                 const user = result.user
                 setUser(user);
                 toast.success('Login successful!')
-                navigate(`${location.state ? location.state : '/'}`);
+                navigate(from, { replace: true });
+
 
             })
 
